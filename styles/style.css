@@ -39,7 +39,7 @@ body {
 .header__address {
     font-style: normal;
     width: 240px;
-    margin: 0 50px 0 0; 
+    margin: 0 50px 0 0;
     list-style: none;
     justify-self: end;
 }
