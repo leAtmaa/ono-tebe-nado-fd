@@ -1,28 +1,30 @@
 
-body {
-    max-width: 1100px;
-    padding: 0;
-    box-sizing: border-box;
-    align-items: center;
-}
-
 .header {
     background-color: white;
-    height: 293px;
     display: grid;
     grid-template-columns: 1fr min-content 1fr;
     align-items: center;
     padding: 0;
     font-size: 18px;
+    background-color: aqua;
 }
 
 .header__menu-list {
     display: flex;
-    gap: 34px;
-    margin: 0;
+    margin: 133px auto 138px auto;
     padding: 0;
     list-style: circle;
     padding-left: 50px;
+   }
+
+.header__link {
+    line-height: 22px;
+    margin-right: 34px;
+}
+
+.header__link__active {
+    text-decoration: none;
+    margin-right: 32.5px;
 }
 
 .no__marker {
@@ -30,30 +32,34 @@ body {
 }
 
 .header__logo {
-    width: 129.11px;
-    height: 104.65px;
-    margin: 0;
+    width: 148px;
+    height: 105px;
     padding: 0;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .header__address {
     font-style: normal;
-    width: 240px;
+    max-width: 240px;
     margin: 0 50px 0 0;
     list-style: none;
     justify-self: end;
+    line-height: 24px;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 
-main {
-display: grid;
+.address-link__active {
+    margin-top: 1px;
+    margin-left: 1px;
 }
 
 .cover {
-    background-image: url('../images/cover.jpg');
+    background-image: url('../images/cover-figma.jpg');
     background-size: cover;
     background-position: center;
-    width: 1100px;
-    height: 757px;
+    min-height: 757px;
     padding: 0;
     margin: 0;
     position: relative;
@@ -65,12 +71,9 @@ display: grid;
 .overlay::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
+    inset: 0;
 }
 
 .card__title,
@@ -84,8 +87,6 @@ display: grid;
     display: flex;
     flex-direction: column;
     color: white;
-    font-size: 100px;
-    text-transform: uppercase;
     padding: 0;
     position: relative;
     z-index: 2;
@@ -97,50 +98,61 @@ display: grid;
     display: block;
     margin: 0;
     padding: 0;
+    line-height: 115px;
     letter-spacing: 0.3em;
     margin-right: -0.3em;
+    text-transform: uppercase;
+    font-size: 100px;
 }
 
-.first {
+.word__intro {
     align-self: flex-start;
 }
 
-.second {
-    align-self: center;
-    margin: 20px auto;
+.word__center {
+    align-items: center;
+    padding-left: 30px;
+    margin: 20px auto 20px auto;
 }
 
-.third {
+.word__end {
     align-self: flex-end;
 }
 
 .description {
     display: flex;
     color: rgb(255, 255, 255);
-    font-size: 19.5px;
+    font-size: 22px;
     text-transform: uppercase;
-    font-weight: normal;
-    width: 1000px;
+    min-width: 1000px;
     justify-content: space-between;
     align-items: center;
     margin: auto 50px 50px 50px;
 }
 
 .subline {
-    word-spacing: 20px;
     padding: 0;
     font-weight: normal;
     line-height: 28px;
-    letter-spacing: 0em;
+    margin-top: 1px;
+}
+
+.subline__word__accent-start {
+    word-spacing: 20px;
+}
+
+.subline__word__accent-end {
+    word-spacing: 18px;
 }
 
 .button {
     display: inline;
     border: 1px solid rgb(255, 255, 255);
-    padding: 12px 32px 11px 31px;
-    margin: 0;
+    padding: 13px 33px 14px 30px;
     align-items: center;
     text-decoration: none;
+    line-height: 100%;
+    letter-spacing: 0;
 }
 
 .lots {
@@ -154,19 +166,20 @@ display: grid;
 .lots__card-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 25px;
 }
 
 .card {
     list-style: none;
     width: 334px;
-    height: 596px;
+    min-height: 596px;
     display: flex;
     flex-direction: column;
     position: relative;
     grid-template-rows: 1fr 1fr 1fr;
-    
+    background-size: cover;
+    background-position: center;
 }
 
 .lots__title {
@@ -175,14 +188,13 @@ display: grid;
     padding: 0;
     margin: 0 915px 27px 40px;
     text-transform: uppercase;
+    line-height: 120%;
 }
 
 .card__title {
     font-size: 22px;
     text-transform: uppercase;
     text-decoration: underline;
-    width: 254px;
-    height: 82px;
     padding: 0;
     margin-right: 40px;
     margin-top: 48px;
@@ -195,24 +207,19 @@ display: grid;
     padding: 0;
     margin: auto 40px 48px;
     color: white;
+    line-height: 120%;
 }
 
 .card_type_film {
     background-image: url('../images/card-lot-01.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 .card_type_book {
     background-image: url('../images/card-lot-02.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 .card_type_picture {
     background-image: url('../images/card-lot-03.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 .lots__look-more-link {
@@ -221,63 +228,67 @@ display: grid;
 }
 
 .about {
-    width: 1052px;
     display: grid;
     padding: 0;
-    margin: 0 24px 180px 24px;
+    margin: 0 24px 177px 24px;
     grid-template-columns: repeat(3 , 334px);
     gap: 25px;
 }
 
-.about__logo {
+.about__column__start {
     background-color: black;
     width: 240px;
     height: 240px;
-    border-radius: 140px;
+    border-radius: 50%;
     padding: 0;
-    margin: 35px 765px 320px 47px;
+    margin: 33px 47px auto 47px;
     align-items: center;
-    display: grid;
+    grid-column: 1; 
     justify-content: center;
 }
 
 .about__logo-image {
-    width: 148px;
-    height: 114px;
-    padding: 1.25px 0.04px 0.2px 4.42px;
-    margin: 64px 45.52px 62px 46.48px;
+    width: 148.5px;
+    height: 114.5px;
+    margin: 64.25px 47.56px 62.2px 46.4px;
+    box-sizing: border-box;
+}
+
+.about__column__end {
+    max-width: 693px;
+    margin: 136px 0 0 0;
+    grid-column: 2 / span 2;
 }
 
 .about__title {
     color: black;
     font-size: 40px;
     text-transform: uppercase;
-    margin: 3px 402px 100px 0;
-}
-
-.about__column__second {
-    width: 693px;
-    height: 449px;
-    margin: 136px 0 0 0;
+    margin: 2px 397px 103px 0;
+    line-height: 100%;
 }
 
 .about__text {
     font-size: 20px;
+    line-height: 24px;
+}
+
+.about__text__start {
     margin: 0 0 24px 0;
 }
 
 .footer {
-    width: 1100px;
-    height: 180px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 0;
+    padding-top: 4px;
     font-size: 18px;
 }
 
 .footer__address {
+    display: flex;
+    flex-direction: column;
     font-style: normal;
-    margin: 0 auto 82px 50px;
+    margin: 0 auto 78px 50px;
     padding: 0;
     list-style: none;
     justify-self: end;
@@ -292,11 +303,20 @@ display: grid;
     text-align: center;
 }
 
+.address-link {
+    line-height: 24.3px;
+    padding-left: 1px;
+}
+
+
+.footer__menu-link__active {
+    text-decoration: none;
+}
+
 .footer__social-list {
     display: flex;
     gap: 48px;
-    height: 48px;
-    margin: 0 50px 131px auto;
+    margin: 0 50px 127px auto;
     padding: 0;
     list-style: none;
 }
@@ -304,6 +324,5 @@ display: grid;
 .footer__social-icon {
     width: 48px;
     height: 48px;
-    border-radius: 24px;
     padding: 0;
 }
