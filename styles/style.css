@@ -49,7 +49,7 @@
     margin-bottom: 5px;
 }
 
-.address-link__active {
+.address-text {
     margin-top: 1px;
     margin-left: 1px;
 }
@@ -111,7 +111,8 @@
 .word__center {
     align-items: center;
     padding-left: 30px;
-    margin: 20px auto 20px auto;
+    text-align: center;
+    margin: 20px;
 }
 
 .word__end {
